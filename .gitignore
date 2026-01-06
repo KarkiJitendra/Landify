@@ -1,0 +1,8 @@
+.env
+bin/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# dependencies you didn’t write
+static/assets/vendor/

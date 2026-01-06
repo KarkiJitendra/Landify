@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Admin Dashboard</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --info-color: #17a2b8;
+            --light-bg: #f8f9fa;
+            --dark-text: #2c3e50;
+            --border-color: #e9ecef;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+        }
+        
+        .sidebar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            min-height: 100vh;
+            color: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar .nav-link {
+            color: rgba(255,255,255,0.8);
+            border-radius: 8px;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            color: white;
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+        
+        .main-content {
+            padding: 20px;
+            background-color: var(--light-bg);
+        }
+        
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .stats-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            color: white;
+            border-radius: 25px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+        
+        .table-modern {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .badge-modern {
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-weight: 500;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .progress-modern {
+            height: 8px;
+            border-radius: 10px;
+            background-color: #e9ecef;
+        }
+        
+        .progress-modern .progress-bar {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 px-0">
+                <div class="sidebar p-3">
+                    <div class="text-center mb-4">
+                        <h4 class="navbar-brand text-white">MarketHub</h4>
+                        <small>Digital Marketing Admin</small>
+                    </div>
+                    
+                    <nav class="nav flex-column">
+                        <a class="nav-link active" href="#dashboard"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                        <a class="nav-link" href="#campaigns"><i class="fas fa-bullhorn me-2"></i>Campaigns</a>
+                        <a class="nav-link" href="#analytics"><i class="fas fa-chart-line me-2"></i>Analytics</a>
+                        <a class="nav-link" href="#leads"><i class="fas fa-users me-2"></i>Leads</a>
+                        <a class="nav-link" href="#content"><i class="fas fa-edit me-2"></i>Content</a>
+                        <a class="nav-link" href="#social"><i class="fas fa-share-alt me-2"></i>Social Media</a>
+                        <a class="nav-link" href="#email"><i class="fas fa-envelope me-2"></i>Email Marketing</a>
+                        <a class="nav-link" href="#reports"><i class="fas fa-file-alt me-2"></i>Reports</a>
+                        <a class="nav-link" href="#settings"><i class="fas fa-cog me-2"></i>Settings</a>
+                    </nav>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 main-content">
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h2 class="mb-1">Dashboard Overview</h2>
+                        <p class="text-muted">Welcome back! Here's what's happening with your marketing campaigns.</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="btn btn-gradient">
+                            <i class="fas fa-plus me-2"></i>New Campaign
+                        </button>
+                        <div class="dropdown">
+                            <img src="https://via.placeholder.com/40" class="user-avatar dropdown-toggle" alt="User" data-bs-toggle="dropdown">
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3 mb-3">
+                        <div class="stats-card">
+                            <div class="stats-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3 class="mb-1">125,847</h3>
+                            <p class="text-muted mb-0">Total Impressions</p>
+                            <small class="text-success"><i class="fas fa-arrow-up"></i> +12.5%</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="stats-card">
+                            <div class="stats-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                                <i class="fas fa-mouse-pointer"></i>
+                            </div>
+                            <h3 class="mb-1">8,429</h3>
+                            <p class="text-muted mb-0">Click-through Rate</p>
+                            <small class="text-success"><i class="fas fa-arrow-up"></i> +8.2%</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="stats-card">
+                            <div class="stats-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h3 class="mb-1">$24,567</h3>
+                            <p class="text-muted mb-0">Revenue Generated</p>
+                            <small class="text-success"><i class="fas fa-arrow-up"></i> +15.3%</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="stats-card">
+                            <div class="stats-icon" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="mb-1">2,847</h3>
+                            <p class="text-muted mb-0">New Leads</p>
+                            <small class="text-success"><i class="fas fa-arrow-up"></i> +22.1%</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Charts Row -->
+                <div class="row mb-4">
+                    <div class="col-md-8 mb-3">
+                        <div class="chart-container">
+                            <h5 class="mb-3">Campaign Performance</h5>
+                            <canvas id="campaignChart" height="100"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="chart-container">
+                            <h5 class="mb-3">Traffic Sources</h5>
+                            <canvas id="trafficChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Active Campaigns Table -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="table-modern">
+                            <div class="p-3 border-bottom">
+                                <h5 class="mb-0">Active Campaigns</h5>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Campaign Name</th>
+                                            <th>Status</th>
+                                            <th>Budget</th>
+                                            <th>Impressions</th>
+                                            <th>Clicks</th>
+                                            <th>Conversion</th>
+                                            <th>Progress</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <strong>Summer Sale 2024</strong>
+                                                <br><small class="text-muted">Social Media Campaign</small>
+                                            </td>
+                                            <td><span class="badge bg-success badge-modern">Active</span></td>
+                                            <td>$5,000</td>
+                                            <td>45,210</td>
+                                            <td>3,240</td>
+                                            <td>8.2%</td>
+                                            <td>
+                                                <div class="progress-modern">
+                                                    <div class="progress-bar bg-success" style="width: 85%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Product Launch</strong>
+                                                <br><small class="text-muted">Email Marketing</small>
+                                            </td>
+                                            <td><span class="badge bg-warning badge-modern">Pending</span></td>
+                                            <td>$3,500</td>
+                                            <td>12,450</td>
+                                            <td>1,890</td>
+                                            <td>12.5%</td>
+                                            <td>
+                                                <div class="progress-modern">
+                                                    <div class="progress-bar bg-warning" style="width: 65%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Brand Awareness</strong>
+                                                <br><small class="text-muted">Display Ads</small>
+                                            </td>
+                                            <td><span class="badge bg-info badge-modern">Running</span></td>
+                                            <td>$7,200</td>
+                                            <td>68,930</td>
+                                            <td>2,560</td>
+                                            <td>4.1%</td>
+                                            <td>
+                                                <div class="progress-modern">
+                                                    <div class="progress-bar bg-info" style="width: 72%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Activities & Quick Actions -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="chart-container">
+                            <h5 class="mb-3">Recent Activities</h5>
+                            <div class="activity-item d-flex align-items-center mb-3">
+                                <div class="activity-icon me-3" style="width: 40px; height: 40px; background: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0"><strong>Email Campaign</strong> "Summer Sale" sent successfully</p>
+                                    <small class="text-muted">2 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="activity-item d-flex align-items-center mb-3">
+                                <div class="activity-icon me-3" style="width: 40px; height: 40px; background: #e8f5e8; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-chart-line text-success"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0"><strong>Conversion Rate</strong> increased by 15% this week</p>
+                                    <small class="text-muted">5 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="activity-item d-flex align-items-center">
+                                <div class="activity-icon me-3" style="width: 40px; height: 40px; background: #fff3e0; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-users text-warning"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0"><strong>New Lead</strong> captured from Facebook campaign</p>
+                                    <small class="text-muted">1 day ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="chart-container">
+                            <h5 class="mb-3">Quick Actions</h5>
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <button class="btn btn-outline-primary w-100 py-3">
+                                        <i class="fas fa-plus mb-2"></i><br>
+                                        New Campaign
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-outline-success w-100 py-3">
+                                        <i class="fas fa-upload mb-2"></i><br>
+                                        Upload Content
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-outline-info w-100 py-3">
+                                        <i class="fas fa-chart-bar mb-2"></i><br>
+                                        View Reports
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-outline-warning w-100 py-3">
+                                        <i class="fas fa-calendar mb-2"></i><br>
+                                        Schedule Post
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Campaign Performance Chart
+        const campaignCtx = document.getElementById('campaignChart').getContext('2d');
+        new Chart(campaignCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Impressions',
+                    data: [12000, 19000, 15000, 25000, 22000, 30000],
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    tension: 0.4
+                }, {
+                    label: 'Clicks',
+                    data: [2000, 3000, 2500, 4000, 3500, 5000],
+                    borderColor: '#f093fb',
+                    backgroundColor: 'rgba(240, 147, 251, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+        
+        // Traffic Sources Chart
+        const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+        new Chart(trafficCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Social Media', 'Email', 'Direct', 'Search', 'Referral'],
+                datasets: [{
+                    data: [35, 25, 20, 15, 5],
+                    backgroundColor: [
+                        '#667eea',
+                        '#f093fb',
+                        '#4facfe',
+                        '#43e97b',
+                        '#ffa726'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

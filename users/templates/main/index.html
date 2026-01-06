@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Landify Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  {% load static %}
+  <!-- Favicons -->
+
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+
+  <!-- =======================================================
+  * Template Name: Landify
+  * Template URL: https://bootstrapmade.com/landify-bootstrap-landing-page-template/
+  * Updated: Aug 04 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h1 class="sitename">Parewa Sewa</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+  {% block content %}
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center">
+
+          <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right" data-aos-delay="200">
+            <div class="hero-content">
+              <h1 class="hero-title">{{ hero.title }}</h1>
+              <p class="hero-description">{{hero.subtitle }}</p>
+              <div class="hero-actions">
+                <a href="#about" class="btn-primary">Start Your Journey</a>
+                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="btn-secondary glightbox">
+                  <i class="bi bi-play-circle"></i>
+                  <span>Watch Our Story</span>
+                </a>
+              </div>
+              <div class="hero-stats">
+                <div class="stat-item">
+                  <span class="stat-number">150+</span>
+                  <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">98%</span>
+                  <span class="stat-label">Client Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">24/7</span>
+                  <span class="stat-label">Support Available</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="300">
+            <div class="hero-visual">
+              <div class="hero-image-wrapper">
+                <img src="{%static 'assets/img/illustration/illustration-15.webp'%}" class="img-fluid hero-image" alt="Hero Image">
+                <div class="floating-elements">
+                  <div class="floating-card card-1">
+                    <i class="bi bi-lightbulb"></i>
+                    <span>Innovation</span>
+                  </div>
+                  <div class="floating-card card-2">
+                    <i class="bi bi-award"></i>
+                    <span>Excellence</span>
+                  </div>
+                  <div class="floating-card card-3">
+                    <i class="bi bi-people"></i>
+                    <span>Collaboration</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="content-wrapper">
+              <div class="section-header">
+                <span class="section-badge">ABOUT OUR COMPANY</span>
+                <h2>Tempor incididunt ut labore et dolore magna</h2>
+              </div>
+
+              <p class="lead-text">{{heading}}</p>
+
+              <p class="description-text">{{description}}</p>
+
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <div class="stat-number">250+</div>
+                  <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">98%</div>
+                  <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label">Support Available</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">12+</div>
+                  <div class="stat-label">Years Experience</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="visual-section">
+              <div class="main-image-container">
+                <img src="{%static 'assets/img/about/about-8.webp'%}" alt="Professional team collaboration" class="img-fluid main-visual">
+                <div class="overlay-card">
+                  <div class="card-content">
+                    <h4>Quality First</h4>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis.</p>
+                    <div class="card-icon">
+                      <i class="bi bi-award-fill"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="secondary-images">
+                <div class="row g-3">
+                  <div class="col-6">
+                    <img src="{% static 'assets/img/about/about-11.webp' %}" alt="Team meeting" class="img-fluid secondary-img">
+                  </div>
+                  <div class="col-6">
+                    <img src="{% static 'assets/img/about/about-5.webp' %}" alt="Office workspace" class="img-fluid secondary-img">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-12" data-aos="fade-up" data-aos-delay="400">
+            <div class="features-section">
+              <div class="row gy-4">
+                <div class="col-md-4">
+                  <div class="feature-box">
+                    <div class="feature-icon">
+                      <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h5>Trusted Security</h5>
+                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="feature-box">
+                    <div class="feature-icon">
+                      <i class="bi bi-lightning-charge"></i>
+                    </div>
+                    <h5>Fast Performance</h5>
+                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="feature-box">
+                    <div class="feature-icon">
+                      <i class="bi bi-headset"></i>
+                    </div>
+                    <h5>Expert Support</h5>
+                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-lg-center">
+          <div class="col-lg-5 order-lg-2" data-aos="fade-left" data-aos-delay="200">
+            <div class="image-wrapper position-relative">
+              <div class="floating-card">
+                <i class="bi bi-shield-lock"></i>
+                <h4>Advanced Security Solutions</h4>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+              </div>
+              <img src="assets/img/misc/misc-6.webp" alt="Security Solutions" class="img-fluid main-image">
+            </div>
+          </div>
+
+          <div class="col-lg-6 offset-lg-1 order-lg-1" data-aos="fade-right" data-aos-delay="100">
+            <div class="content-area">
+              <h2>Transform Your Business with Cutting-Edge Technology</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+
+              <ul class="feature-list">
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Streamline operations and enhance productivity</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Achieve remarkable cost savings and efficiency gains</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Scale your business resources intelligently</span>
+                </li>
+              </ul>
+
+              <div class="cta-wrapper">
+                <a href="#" class="btn btn-cta">Start Your Journey</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+
+      <div class="container">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 40
+                },
+                "480": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 60
+                },
+                "640": {
+                  "slidesPerView": 4,
+                  "spaceBetween": 80
+                },
+                "992": {
+                  "slidesPerView": 6,
+                  "spaceBetween": 120
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/clients-1.webp" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-2.webp" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-3.webp" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-4.webp" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-5.webp" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-6.webp" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-7.webp" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/clients-8.webp" class="img-fluid" alt=""></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Clients Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="description-title">Testimonials</span>
+        <h2>Testimonials</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="testimonial-masonry">
+
+          <div class="testimonial-item" data-aos="fade-up">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>Implementing innovative strategies has revolutionized our approach to market challenges and competitive positioning.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="assets/img/person/person-f-7.webp" alt="Client">
+                </div>
+                <div class="client-details">
+                  <h3>Rachel Bennett</h3>
+                  <span class="position">Strategy Director</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item highlight" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>Exceptional service delivery and innovative solutions have transformed our business operations, leading to remarkable growth and enhanced customer satisfaction across all touchpoints.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="assets/img/person/person-m-7.webp" alt="Client">
+                </div>
+                <div class="client-details">
+                  <h3>Daniel Morgan</h3>
+                  <span class="position">Chief Innovation Officer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>Strategic partnership has enabled seamless digital transformation and operational excellence.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="assets/img/person/person-f-8.webp" alt="Client">
+                </div>
+                <div class="client-details">
+                  <h3>Emma Thompson</h3>
+                  <span class="position">Digital Lead</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>Professional expertise and dedication have significantly improved our project delivery timelines and quality metrics.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="assets/img/person/person-m-8.webp" alt="Client">
+                </div>
+                <div class="client-details">
+                  <h3>Christopher Lee</h3>
+                  <span class="position">Technical Director</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item highlight" data-aos="fade-up" data-aos-delay="400">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>Collaborative approach and industry expertise have revolutionized our product development cycle, resulting in faster time-to-market and increased customer engagement levels.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="assets/img/person/person-f-9.webp" alt="Client">
+                </div>
+                <div class="client-details">
+                  <h3>Olivia Carter</h3>
+                  <span class="position">Product Manager</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="testimonial-content">
+              <div class="quote-pattern">
+                <i class="bi bi-quote"></i>
+              </div>
+              <p>Innovative approach to user experience design has significantly enhanced our platform's engagement metrics and customer retention rates.</p>
+              <div class="client-info">
+                <div class="client-image">
+                  <img src="assets/img/person/person-m-13.webp" alt="Client">
+                </div>
+                <div class="client-details">
+                  <h3>Nathan Brooks</h3>
+                  <span class="position">UX Director</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="main-headline">Driving Excellence Through Innovation</h3>
+            <p class="main-description">Vestibulum rutrum quam vitae fringilla tincidunt. Suspendisse nec tortor urna. Ut laoreet sodales nisi, quis iaculis nulla iaculis vitae.</p>
+
+            <div class="achievement-badge" data-aos="zoom-in" data-aos-delay="300">
+              <div class="achievement-content">
+                <div class="achievement-icon">
+                  <i class="bi bi-trophy-fill"></i>
+                </div>
+                <div class="achievement-details">
+                  <div class="achievement-title">Industry Leader</div>
+                  <div class="achievement-subtitle">Recognized by 85+ industry experts</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="row g-4">
+            <div class="col-xl-3 col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <div class="stat-content">
+                  <div class="stat-number">
+                    <span data-purecounter-start="0" data-purecounter-end="285" data-purecounter-duration="2" class="purecounter"></span>K+
+                  </div>
+                  <div class="stat-label">Happy Customers</div>
+                  <div class="stat-growth">
+                    <i class="bi bi-arrow-up"></i>
+                    <span>+12% this year</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="stat-item featured">
+                <div class="stat-icon">
+                  <i class="bi bi-graph-up-arrow"></i>
+                </div>
+                <div class="stat-content">
+                  <div class="stat-number">
+                    <span data-purecounter-start="0" data-purecounter-end="98.5" data-purecounter-duration="2" class="purecounter"></span>%
+                  </div>
+                  <div class="stat-label">Success Rate</div>
+                  <div class="stat-growth">
+                    <i class="bi bi-arrow-up"></i>
+                    <span>+5% improvement</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <i class="bi bi-award-fill"></i>
+                </div>
+                <div class="stat-content">
+                  <div class="stat-number">
+                    <span data-purecounter-start="0" data-purecounter-end="47" data-purecounter-duration="2" class="purecounter"></span>
+                  </div>
+                  <div class="stat-label">Awards Won</div>
+                  <div class="stat-growth">
+                    <i class="bi bi-arrow-up"></i>
+                    <span>+8 this quarter</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <i class="bi bi-globe"></i>
+                </div>
+                <div class="stat-content">
+                  <div class="stat-number">
+                    <span data-purecounter-start="0" data-purecounter-end="156" data-purecounter-duration="2" class="purecounter"></span>
+                  </div>
+                  <div class="stat-label">Global Partners</div>
+                  <div class="stat-growth">
+                    <i class="bi bi-arrow-up"></i>
+                    <span>+23 new partners</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="description-title">Services</span>
+        <h2>Services</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="intro-content" data-aos="fade-right" data-aos-delay="100">
+              <div class="section-badge mb-3" data-aos="zoom-in" data-aos-delay="50">
+                <i class="bi bi-star-fill"></i>
+                <span>WHAT WE DO</span>
+              </div>
+              <h2 class="section-heading mb-4">Transforming Ideas into Outstanding Results</h2>
+              <p class="section-description mb-4">We believe in crafting exceptional experiences that drive meaningful growth for your business. Our dedicated team combines creativity with technical excellence to deliver solutions that make a difference.</p>
+              <a href="#" class="cta-button" data-aos="fade-right" data-aos-delay="200">
+                Explore Our Work
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="150">
+              <img src="{%static 'assets/img/services/services-1.webp'%}" alt="Services" class="img-fluid">
+            </div>
+          </div>
+        </div>
+
+        <div class="services-grid mt-5">
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-card">
+                <div class="card-number">
+                  <span>01</span>
+                </div>
+                <div class="card-content">
+                  <h5 class="service-title">
+                    <a href="#">Custom Application Development</a>
+                  </h5>
+                  <p class="service-description">Building robust applications tailored to your specific needs using modern frameworks and cutting-edge technologies.</p>
+                </div>
+              </div>
+            </div><!-- End Service Card -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-card">
+                <div class="card-number">
+                  <span>02</span>
+                </div>
+                <div class="card-content">
+                  <h5 class="service-title">
+                    <a href="#">Strategic Planning</a>
+                  </h5>
+                  <p class="service-description">Comprehensive roadmaps that align technology solutions with your business objectives and market opportunities.</p>
+                </div>
+              </div>
+            </div><!-- End Service Card -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-card">
+                <div class="card-number">
+                  <span>03</span>
+                </div>
+                <div class="card-content">
+                  <h5 class="service-title">
+                    <a href="#">Identity Design</a>
+                  </h5>
+                  <p class="service-description">Creating compelling visual narratives that resonate with your audience and strengthen brand recognition across all touchpoints.</p>
+                </div>
+              </div>
+            </div><!-- End Service Card -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-card">
+                <div class="card-number">
+                  <span>04</span>
+                </div>
+                <div class="card-content">
+                  <h5 class="service-title">
+                    <a href="#">Digital Marketing</a>
+                  </h5>
+                  <p class="service-description">Maximizing your online presence through targeted campaigns that drive engagement and convert visitors into loyal customers.</p>
+                </div>
+              </div>
+            </div><!-- End Service Card -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="service-card">
+                <div class="card-number">
+                  <span>05</span>
+                </div>
+                <div class="card-content">
+                  <h5 class="service-title">
+                    <a href="#">User Experience Design</a>
+                  </h5>
+                  <p class="service-description">Crafting intuitive interfaces that prioritize user needs while delivering seamless interactions across desktop and mobile platforms.</p>
+                </div>
+              </div>
+            </div><!-- End Service Card -->
+
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="service-card">
+                <div class="card-number">
+                  <span>06</span>
+                </div>
+                <div class="card-content">
+                  <h5 class="service-title">
+                    <a href="#">Data Intelligence</a>
+                  </h5>
+                  <p class="service-description">Transforming raw data into actionable insights that inform strategic decisions and optimize business performance effectively.</p>
+                </div>
+              </div>
+            </div><!-- End Service Card -->
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+   
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="faq-container">
+
+              <div class="faq-item faq-active">
+                <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+                <div class="faq-content">
+                  <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>Feugiat scelerisque varius morbi enim nunc faucibus?</h3>
+                <div class="faq-content">
+                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
+                <div class="faq-content">
+                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                <div class="faq-content">
+                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>Tempus quam pellentesque nec nam aliquam sem et tortor?</h3>
+                <div class="faq-content">
+                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
+                <div class="faq-content">
+                  <p>Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi. Distinctio ipsam dolore et.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div><!-- End Faq Column-->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="description-title">Contact</span>
+        <h2>Contact</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <div class="content" data-aos="fade-up" data-aos-delay="200">
+              <div class="section-category mb-3">Contact US</div>
+              <h2 class="display-5 mb-4">Nemo enim ipsam voluptatem quia voluptas aspernatur</h2>
+              <p class="lead mb-4">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+
+              <div class="contact-info mt-5">
+                <div class="info-item d-flex mb-3" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-envelope-at me-3"></i>
+                  <span>info@example.com</span>
+                </div>
+
+                <div class="info-item d-flex mb-3" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-telephone me-3"></i>
+                  <span>+1 5589 55488 558</span>
+                </div>
+
+                <div class="info-item d-flex mb-4" data-aos="fade-up" data-aos-delay="500">
+                  <i class="bi bi-geo-alt me-3"></i>
+                  <span>A108 Adam Street, New York, NY 535022</span>
+                </div>
+
+                <a href="#" class="map-link d-inline-flex align-items-center" data-aos="fade-up" data-aos-delay="600">
+                  Open Map
+                  <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-body p-4 p-lg-5">
+
+                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
+                  <div class="row gy-4">
+
+                    <div class="col-12">
+                      <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    </div>
+
+                    <div class="col-12 ">
+                      <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                    </div>
+
+                    <div class="col-12">
+                      <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    </div>
+
+                    <div class="col-12">
+                      <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    </div>
+
+                    <div class="col-12 text-center">
+                      <div class="loading">Loading</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                      <button type="submit" class="btn btn-submit w-100">Submit Message</button>
+                    </div>
+
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+{% endblock %}
+  </main>
+
+  <footer id="footer" class="footer position-relative dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Landify</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>A108 Adam Street</p>
+          <p>New York, NY 535022</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+          <p><strong>Email:</strong> <span>info@example.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js'%}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js'%}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js'%}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js'%}"></script>
+
+</body>
+
+</html>
