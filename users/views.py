@@ -37,6 +37,7 @@ def service_detail(request, service_id):
 def contact_view(request):
     sent = False
     if request.method == 'POST':
+        
         name = request.POST.get('name')
         email = request.POST.get('email')
         subject = request.POST.get('subject')
@@ -53,6 +54,8 @@ def contact_view(request):
             messages.success(request, 'Thank you, mail sent!')
         except Exception as e:
             messages.error(request, 'Sorry – message could not be sent.')
+        # return render(request, 'main/index.html', {'sent': True})
+        return HttpResponse("Thank you, your message has been sent.")
         
     return render(request, 'main/index.html', {'sent': sent})
 
