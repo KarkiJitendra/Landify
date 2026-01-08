@@ -78,6 +78,7 @@ class Service(TimeStampedModel):
 
 class Stacks(TimeStampedModel):
     name = models.CharField(max_length=100)
+    stats = models.PositiveIntegerField(default=0)
     logo = models.ImageField(upload_to="technologies/")
     is_active = models.BooleanField(default=True)
 
@@ -233,8 +234,17 @@ class ContactMessage(TimeStampedModel):
 # ======================================================
 
 class FooterLink(TimeStampedModel):
+    ICON_CHOICES = [
+        ('twitter-x', 'Twitter / X'),
+        ('facebook',  'Facebook'),
+        ('instagram', 'Instagram'),
+        ('linkedin',  'LinkedIn'),
+        ('youtube',   'YouTube'),
+        ('tiktok',    'TikTok'),
+    ]
     title = models.CharField(max_length=100)
     url = models.URLField()
+    icon = models.CharField(max_length=20, choices=ICON_CHOICES)
     section_name = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
 

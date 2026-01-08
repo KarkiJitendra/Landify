@@ -66,9 +66,9 @@
     </div>
   </header>
 
+  {% block content %}
   <main class="main">
 
-  {% block content %}
     <!-- Hero Section -->
     <section id="hero" class="hero section">
 
@@ -256,7 +256,7 @@
                 <h4>Advanced Security Solutions</h4>
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
               </div>
-              <img src="assets/img/misc/misc-6.webp" alt="Security Solutions" class="img-fluid main-image">
+              <img src="{%static 'assets/img/misc/misc-6.webp'%}" alt="Security Solutions" class="img-fluid main-image">
             </div>
           </div>
 
@@ -332,148 +332,18 @@
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/clients-1.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-2.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-3.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-4.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-5.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-6.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-7.webp" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/clients-8.webp" class="img-fluid" alt=""></div>
+          {% for p in partner %}
+          <div class="swiper-slide">
+            <img src="{{ p.logo.url }}" class="img-fluid" alt="{{ p.name }}">
           </div>
+          {% endfor %}
+          </div>
+         
         </div>
 
       </div>
 
     </section><!-- /Clients Section -->
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="description-title">Testimonials</span>
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="testimonial-masonry">
-
-          <div class="testimonial-item" data-aos="fade-up">
-            <div class="testimonial-content">
-              <div class="quote-pattern">
-                <i class="bi bi-quote"></i>
-              </div>
-              <p>Implementing innovative strategies has revolutionized our approach to market challenges and competitive positioning.</p>
-              <div class="client-info">
-                <div class="client-image">
-                  <img src="assets/img/person/person-f-7.webp" alt="Client">
-                </div>
-                <div class="client-details">
-                  <h3>Rachel Bennett</h3>
-                  <span class="position">Strategy Director</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-item highlight" data-aos="fade-up" data-aos-delay="100">
-            <div class="testimonial-content">
-              <div class="quote-pattern">
-                <i class="bi bi-quote"></i>
-              </div>
-              <p>Exceptional service delivery and innovative solutions have transformed our business operations, leading to remarkable growth and enhanced customer satisfaction across all touchpoints.</p>
-              <div class="client-info">
-                <div class="client-image">
-                  <img src="assets/img/person/person-m-7.webp" alt="Client">
-                </div>
-                <div class="client-details">
-                  <h3>Daniel Morgan</h3>
-                  <span class="position">Chief Innovation Officer</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="testimonial-content">
-              <div class="quote-pattern">
-                <i class="bi bi-quote"></i>
-              </div>
-              <p>Strategic partnership has enabled seamless digital transformation and operational excellence.</p>
-              <div class="client-info">
-                <div class="client-image">
-                  <img src="assets/img/person/person-f-8.webp" alt="Client">
-                </div>
-                <div class="client-details">
-                  <h3>Emma Thompson</h3>
-                  <span class="position">Digital Lead</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-            <div class="testimonial-content">
-              <div class="quote-pattern">
-                <i class="bi bi-quote"></i>
-              </div>
-              <p>Professional expertise and dedication have significantly improved our project delivery timelines and quality metrics.</p>
-              <div class="client-info">
-                <div class="client-image">
-                  <img src="assets/img/person/person-m-8.webp" alt="Client">
-                </div>
-                <div class="client-details">
-                  <h3>Christopher Lee</h3>
-                  <span class="position">Technical Director</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-item highlight" data-aos="fade-up" data-aos-delay="400">
-            <div class="testimonial-content">
-              <div class="quote-pattern">
-                <i class="bi bi-quote"></i>
-              </div>
-              <p>Collaborative approach and industry expertise have revolutionized our product development cycle, resulting in faster time-to-market and increased customer engagement levels.</p>
-              <div class="client-info">
-                <div class="client-image">
-                  <img src="assets/img/person/person-f-9.webp" alt="Client">
-                </div>
-                <div class="client-details">
-                  <h3>Olivia Carter</h3>
-                  <span class="position">Product Manager</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-item" data-aos="fade-up" data-aos-delay="500">
-            <div class="testimonial-content">
-              <div class="quote-pattern">
-                <i class="bi bi-quote"></i>
-              </div>
-              <p>Innovative approach to user experience design has significantly enhanced our platform's engagement metrics and customer retention rates.</p>
-              <div class="client-info">
-                <div class="client-image">
-                  <img src="assets/img/person/person-m-13.webp" alt="Client">
-                </div>
-                <div class="client-details">
-                  <h3>Nathan Brooks</h3>
-                  <span class="position">UX Director</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
 
     <!-- Stats Section -->
     <section id="stats" class="stats section">
@@ -586,7 +456,7 @@
       <div class="container section-title" data-aos="fade-up">
         <span class="description-title">Services</span>
         <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>These are the services that we provide.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -614,89 +484,21 @@
 
         <div class="services-grid mt-5">
           <div class="row g-4">
+            {% for s in serve %}
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div class="service-card">
                 <div class="card-number">
-                  <span>01</span>
+                  <span>{{forloop.counter|stringformat:"02d"}}</span>
                 </div>
                 <div class="card-content">
                   <h5 class="service-title">
-                    <a href="#">Custom Application Development</a>
+                    <a href="{% url 'service_detail' s.id %}">{{s.name}}</a>
                   </h5>
-                  <p class="service-description">Building robust applications tailored to your specific needs using modern frameworks and cutting-edge technologies.</p>
+                  <p class="service-description">{{s.description}}</p>
                 </div>
               </div>
             </div><!-- End Service Card -->
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="service-card">
-                <div class="card-number">
-                  <span>02</span>
-                </div>
-                <div class="card-content">
-                  <h5 class="service-title">
-                    <a href="#">Strategic Planning</a>
-                  </h5>
-                  <p class="service-description">Comprehensive roadmaps that align technology solutions with your business objectives and market opportunities.</p>
-                </div>
-              </div>
-            </div><!-- End Service Card -->
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="service-card">
-                <div class="card-number">
-                  <span>03</span>
-                </div>
-                <div class="card-content">
-                  <h5 class="service-title">
-                    <a href="#">Identity Design</a>
-                  </h5>
-                  <p class="service-description">Creating compelling visual narratives that resonate with your audience and strengthen brand recognition across all touchpoints.</p>
-                </div>
-              </div>
-            </div><!-- End Service Card -->
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="service-card">
-                <div class="card-number">
-                  <span>04</span>
-                </div>
-                <div class="card-content">
-                  <h5 class="service-title">
-                    <a href="#">Digital Marketing</a>
-                  </h5>
-                  <p class="service-description">Maximizing your online presence through targeted campaigns that drive engagement and convert visitors into loyal customers.</p>
-                </div>
-              </div>
-            </div><!-- End Service Card -->
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="service-card">
-                <div class="card-number">
-                  <span>05</span>
-                </div>
-                <div class="card-content">
-                  <h5 class="service-title">
-                    <a href="#">User Experience Design</a>
-                  </h5>
-                  <p class="service-description">Crafting intuitive interfaces that prioritize user needs while delivering seamless interactions across desktop and mobile platforms.</p>
-                </div>
-              </div>
-            </div><!-- End Service Card -->
-
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="service-card">
-                <div class="card-number">
-                  <span>06</span>
-                </div>
-                <div class="card-content">
-                  <h5 class="service-title">
-                    <a href="#">Data Intelligence</a>
-                  </h5>
-                  <p class="service-description">Transforming raw data into actionable insights that inform strategic decisions and optimize business performance effectively.</p>
-                </div>
-              </div>
-            </div><!-- End Service Card -->
+            {% endfor %}
 
           </div>
         </div>
@@ -716,54 +518,16 @@
           <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
 
             <div class="faq-container">
+            {% for f in faq %}
 
-              <div class="faq-item faq-active">
-                <h3>Non consectetur a erat nam at lectus urna duis?</h3>
+              <div class="faq-item {% if loop.first %}faq-active{% endif %}">
+                <h3>{{ f.question }}</h3>
                 <div class="faq-content">
-                  <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                  <p>{{ f.answer }}</p>
                 </div>
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Feugiat scelerisque varius morbi enim nunc faucibus?</h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
-                <div class="faq-content">
-                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Tempus quam pellentesque nec nam aliquam sem et tortor?</h3>
-                <div class="faq-content">
-                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
-                <div class="faq-content">
-                  <p>Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi. Distinctio ipsam dolore et.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
+              {% endfor %}
 
             </div>
 
@@ -782,7 +546,7 @@
       <div class="container section-title" data-aos="fade-up">
         <span class="description-title">Contact</span>
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Reach out to us for comprehensive digital marketing solutions, campaign consultations, and strategic partnerships.</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -791,28 +555,30 @@
           <div class="col-lg-6">
             <div class="content" data-aos="fade-up" data-aos-delay="200">
               <div class="section-category mb-3">Contact US</div>
-              <h2 class="display-5 mb-4">Nemo enim ipsam voluptatem quia voluptas aspernatur</h2>
-              <p class="lead mb-4">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+              <h2 class="display-5 mb-4">Get In Touch</h2>
+              <p class="lead mb-4">Tell us about your digital marketing goals, current challenges, or specific services you're interested in. Our team will respond within 24 hours with a customized strategy.</p>
 
               <div class="contact-info mt-5">
                 <div class="info-item d-flex mb-3" data-aos="fade-up" data-aos-delay="300">
                   <i class="bi bi-envelope-at me-3"></i>
-                  <span>info@example.com</span>
+                  <span>{{company.email}}</span>
                 </div>
 
                 <div class="info-item d-flex mb-3" data-aos="fade-up" data-aos-delay="400">
                   <i class="bi bi-telephone me-3"></i>
-                  <span>+1 5589 55488 558</span>
+                  <span>{{company.phone}}</span>
                 </div>
 
                 <div class="info-item d-flex mb-4" data-aos="fade-up" data-aos-delay="500">
                   <i class="bi bi-geo-alt me-3"></i>
-                  <span>A108 Adam Street, New York, NY 535022</span>
+                  <span>{{company.address}}</span>
                 </div>
 
-                <a href="#" class="map-link d-inline-flex align-items-center" data-aos="fade-up" data-aos-delay="600">
+                <a href="{{company.map_embed_url}}" class="map-link d-inline-flex align-items-center" data-aos="fade-up" data-aos-delay="600">
                   Open Map
-                  <i class="bi bi-arrow-right ms-2"></i>
+                  <i class="bi bi-arrow-right ms-2">
+                    
+                  </i>
                 </a>
               </div>
             </div>
@@ -822,7 +588,8 @@
             <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
               <div class="card-body p-4 p-lg-5">
 
-                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
+                <form action="{% url 'contact' %}" method="Post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
+                  {% csrf_token %}
                   <div class="row gy-4">
 
                     <div class="col-12">
@@ -842,12 +609,14 @@
                     </div>
 
                     <div class="col-12 text-center">
-                      <div class="loading">Loading</div>
-                      <div class="error-message"></div>
-                      <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                      <button type="submit" class="btn btn-submit w-100">Submit Message</button>
-                    </div>
+                    {% if sent %}
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    {% else %}
+                        <div class="error-message" style="display:none;">Error – please try again.</div>
+                        <div class="loading" style="display:none;">Loading…</div>
+                        <button type="submit" class="btn btn-submit w-100">Submit Message</button>
+                    {% endif %}
+                  </div>
 
                   </div>
                 </form>
@@ -870,17 +639,16 @@
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Landify</span>
+            <span class="sitename">Parewa Sewa</span>
           </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <p>We are the best.</p>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="{{company.twitter}}"><i class="bi bi-twitter-x"></i></a>
+            <a href="{{company.facebook}}"><i class="bi bi-facebook"></i></a>
+            <a href="{{company.instagram}}"><i class="bi bi-instagram"></i></a>
+            <a href="{{company.linkedin}}"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
-
         <div class="col-lg-2 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
@@ -892,24 +660,22 @@
           </ul>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
+        <div class="col-lg-2 col-6 footer-links"  class="service-links" data-show = '5'> 
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+           {% for s in serve %}
+            <li><a href="{% url 'service_detail' s.id %}">{{s.name}}</a></li>
+            {% endfor %}
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
-          <p>United States</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
+          <p>Tinkune</p>
+          <p>Kathmandu, KTM 44500</p>
+          <p>Nepal</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>{{company.phone}}</span></p>
+          <p><strong>Email:</strong> <span>{{company.email}}</span></p>
         </div>
 
       </div>
